@@ -59,16 +59,16 @@ public class Baekjoon_1194_달이차오른다가자 {
 							key = key | (1 << arr[nr][nc] - 'a');
 						}
 						if (arr[nr][nc] <= 'F' && arr[nr][nc] >= 'A') {
-							if((key & (1<<arr[nr][nc]-'A'))==0) {
+							if ((key & (1 << arr[nr][nc] - 'A')) == 0) {
 								continue;
 							}
 						}
-						if(visited[nr][nc][key]) {
+						if (visited[nr][nc][key]) {
 							continue;
 						}
 						visited[nr][nc][key] = true;
 						queue.offer(new Point(nr, nc, key));
-						
+
 					}
 				}
 			}

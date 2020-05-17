@@ -24,7 +24,7 @@ public class Baekjoon_1941_소문난칠공주 {
 		if (r == current) {
 			System.out.println(Arrays.toString(temp));
 		} else {
-			
+
 		}
 	}
 
@@ -38,9 +38,8 @@ public class Baekjoon_1941_소문난칠공주 {
 		}
 	}
 
-}
-
 	@Override
 	public String toString() {
 		return "Baekjoon_1941_소문난칠공주 []";
 	}
+}
