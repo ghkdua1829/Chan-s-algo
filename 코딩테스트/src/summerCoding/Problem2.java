@@ -1,57 +1,37 @@
 package summerCoding;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Problem2 {
 
 	public static void main(String[] args) {
-		System.out.println(solution(4));
+		System.out.println(solution(10000));
+		System.out.println(10e9);
 	}
 
-	static public long solution(long n) {
-		Map<Long, Long> map = new HashMap<Long, Long>();
+	static private List<Long> exp() {
+        List<Long> result = new ArrayList<>();
+        long x = 1;
+        while (x < 10e9) {
+            result.add(x);
+            x *= 3;
+        }
+        return result;
+    }
 
-		long temp = 1L;
-		int up = 0;
-		while (true) {
-			temp *= 3;
-			up++;
-			if (temp > n) {
-				break;
-			}
-		}
-		System.out.println(up);
-		map.put(0L, 1L);
-		map.put(1L, 3L);
-		long idx = 1;
-		int upNum = 2;
-		if (n == 1) {
-			return map.get(0L);
-		} else if (n == 2) {
-			return map.get(1L);
-		}
+    static public long solution(long n) {
+        long answer = 0;
 
-		while (true) {
-			long tempidx = idx;
-			for (long i = 0L; i < tempidx; i++) {
-				idx += 1;
-				map.put(idx, map.get((long) i) + map.get(tempidx));
-				if (idx == n) {
-					return map.get(n - 1L);
-				}
-			}
-			Long tempNum = 1L;
-			for (int s = 0; s < upNum; s++) {
-				tempNum *= 3;
-			}
-			upNum++;
-			idx += 1;
-			map.put(idx, tempNum);
-			if (idx == n) {
-				return map.get(n - 1L);
-			}
+        List<Long> exp = exp();
+        for (int j = 0; j < exp.size(); j++) {
+            if ((n & (1 << j)) != 0) {
+                answer += exp.get(j);
+            }
+        }
 
-		}
-	}
+        return answer;
+    }
 }
