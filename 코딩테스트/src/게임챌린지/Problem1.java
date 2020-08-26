@@ -37,11 +37,11 @@ public class Problem1 {
 				}
 			}
 		}
-		if(answer==0) {
+		if (answer == 0) {
 			return -1;
 		}
 
-		return answer/2;
+		return answer / 2;
 	}
 
 	static boolean insepect(int[][] board) {
@@ -85,4 +85,5 @@ public class Problem1 {
 	static boolean isIn(int r, int c) {
 		return r >= 0 && c >= 0 && r < copy.length && c < copy[0].length;
 	}
+
 }
