@@ -46,14 +46,6 @@ public class Baekjoon_2531_회전초밥 {
 		System.out.println(max);
 	}
 
-	static void makeCombination(int r, int[] temp, int current, int start) {
-		if (r == current) {
-			System.out.println(Arrays.toString(temp));
-		} else {
-			for (int i = start; i < arr.length(); i++) {
-				temp[current] = arr[i];
-				makeCombination(r, temp, current + 1, i + 1);
-			}
-		}
-	}
 }
+
+
