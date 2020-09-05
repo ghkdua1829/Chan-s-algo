@@ -33,17 +33,17 @@ public class problem4 {
 		}
 		visited[0][0] = true;
 		nowMoney[0][0] = 0;
-		bfs(new Point(0, 0, -1, 0, 0), visited);
+		dfs(new Point(0, 0, -1, 0, 0), visited);
 		answer = finalResult;
 		System.out.println(answer);
 		return answer;
 	}
 
-	private static void bfs(Point point, boolean[][] visited) {
+	private static void dfs(Point point, boolean[][] visited) {
 		if (point.r == copyboard.length - 1 && point.c == copyboard[0].length - 1) {
 			int result = 500 * point.corner + 100 * point.straight;
 
-			if (finalResult >= result) {
+			if (finalResult > result) {
 				nowMoney[point.r][point.c] = result;
 				finalResult = result;
 			}
@@ -53,8 +53,7 @@ public class problem4 {
 				int nc = point.c + search[s][1];
 
 				if (isIn(nr, nc) && copyboard[nr][nc] == 0 && !visited[nr][nc]
-						&& (nowMoney[nr][nc] >= 500 * point.corner + 100 * point.straight + 100
-								|| nowMoney[nr][nc] >= 500 * point.corner + 100 * point.straight + 600)) {
+						&& (nowMoney[nr][nc] >= 500 * point.corner + 100 * point.straight)) {
 					int tempDir = point.dir;
 					int tempR = point.r;
 					int tempC = point.c;
@@ -70,11 +69,14 @@ public class problem4 {
 					point.straight++;
 					point.r = nr;
 					point.c = nc;
-					nowMoney[nr][nc] = 500 * point.corner + 100 * point.straight;
+					if (nowMoney[nr][nc] > 500 * point.corner + 100 * point.straight) {
+						nowMoney[nr][nc] = 500 * point.corner + 100 * point.straight;
+
+					}
 					visited[nr][nc] = true;
-					
-					bfs(point, visited);
-					
+
+					dfs(point, visited);
+
 					visited[nr][nc] = false;
 
 					point.dir = tempDir;
