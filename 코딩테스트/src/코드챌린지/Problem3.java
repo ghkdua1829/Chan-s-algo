@@ -33,26 +33,6 @@ public class Problem3 {
 				tempMin = a[i];
 			}
 		}
-//		for (int i = 1; i < a.length - 1; i++) {
-//			boolean rOk = true;
-//			boolean lOk = true;
-//			int num = a[i];
-//			for (int r = i + 1; r < a.length; r++) {
-//				if (num > a[r]) {
-//					rOk = false;
-//					break;
-//				}
-//			}
-//			for (int l = i - 1; l >= 0; l--) {
-//				if (num > a[l]) {
-//					lOk = false;
-//					break;
-//				}
-//			}
-//			if (!rOk && !lOk) {
-//				answer++;
-//			}
-//		}
 		answer = a.length - answer;
 		return answer;
 	}
