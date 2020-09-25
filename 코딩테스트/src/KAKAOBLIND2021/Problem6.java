@@ -18,7 +18,6 @@ public class Problem6 {
 		}
 		Point[] card = new Point[count];
 		for(int i=0;i<count;i++) {
-			card[i]
 		}
 		int[][][] visited = new int[4][4][(int) Math.pow(2, count)];
 		for (int a = 0; a < 4; a++) {
