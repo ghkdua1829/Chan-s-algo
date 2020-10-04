@@ -3,11 +3,6 @@ package level2;
 public class 피보나치수 {
 	static int[] arr;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		solution(8);
-	}
 
 	static public int solution(int n) {
 		int answer = 0;
