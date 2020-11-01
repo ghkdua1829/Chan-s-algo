@@ -5,8 +5,12 @@ import java.util.Arrays;
 public class InsertSort {
 	// 삽입 정렬
 	public static void main(String[] args) {
-		int[] arr = { 5, 1, 6, 7, 8, 75, 5, 65, 456, 353, 45, 45, 3425, 43, 3, 2, 4 };
-		insertSort(arr);
+		Integer[] arr = { 5, 1, 6, 7, 8, 75, 5, 65, 456, 353, 45, 45, 3425, 43, 3, 2, 4 };
+//		insertSort(arr);
+		Integer a = arr[1];
+		a=2;
+		System.out.println(arr[1]);
+		
 	}
 
 	static void insertSort(int[] arr) {
