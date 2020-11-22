@@ -49,9 +49,26 @@ public class Baekjoon_20056_마법사상어와파이어볼 {
 			// 1 단계 : 모든 파이어볼 이동
 			while (!queue.isEmpty()) {
 				Ball top = queue.poll();
-				int nr = top.r + top.s * search[top.d][0];
-				int nc = top.c + top.s * search[top.d][1];
-				cntBall[(nr + N) % N][(nc + N) % N].add(new Ball((nr + N) % N, (nc + N) % N, top.m, top.s, top.d));
+				for (int i = 0; i < top.s; i++) {
+					top.r += search[top.d][0];
+					top.c += search[top.d][1];
+					if (top.r == N) {
+						top.r = 0;
+					}
+					if (top.c == N) {
+						top.c = 0;
+					}
+					if (top.r == -1) {
+						top.r = N - 1;
+					}
+					if (top.c == -1) {
+						top.c = N - 1;
+					}
+
+				}
+//				int nr = top.r + top.s * search[top.d][0];
+//				int nc = top.c + top.s * search[top.d][1];
+				cntBall[top.r][top.c].add(new Ball(top.r, top.c, top.m, top.s, top.d));
 			}
 			for (int r = 0; r < N; r++) {
 				for (int c = 0; c < N; c++) {

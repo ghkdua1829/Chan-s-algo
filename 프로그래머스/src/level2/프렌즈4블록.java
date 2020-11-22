@@ -2,9 +2,13 @@ package level2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class 프렌즈4블록 {
@@ -14,7 +18,23 @@ public class 프렌즈4블록 {
 
 	public static void main(String[] args) {
 		String[] board = { "ABCD", "BACE", "BCDD", "BCDD" };
-		System.out.println(solution(4, 4, board));
+		String str = "Qwe";
+//		System.out.println(solution(4, 4, board));
+		Map<String, Integer> map = new HashMap<String, Integer>();
+//		map.put("Asd", 1);
+//		System.out.println(map.get("Asds"));
+		map.forEach((k,v) -> {
+		
+		});
+
+		Set<Point> set = new HashSet<프렌즈4블록.Point>();
+		set.add(new Point(1, 2));
+		set.add(new Point(1, 2));
+		Iterator<Point> it = set.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		
 	}
 
 	static public int solution(int m, int n, String[] board) {
@@ -98,6 +118,31 @@ public class 프렌즈4블록 {
 
 	static class Point {
 		int r, c;
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + c;
+			result = prime * result + r;
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Point other = (Point) obj;
+			if (c != other.c)
+				return false;
+			if (r != other.r)
+				return false;
+			return true;
+		}
 
 		@Override
 		public String toString() {
