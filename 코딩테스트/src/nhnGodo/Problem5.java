@@ -33,7 +33,7 @@ public class Problem5 {
 			int top = pq.poll();
 			zero++;
 			pq.add(top - 1);
-			if (pq.peek() < zero) {
+			if (pq.peek() < zero) { 
 				break;
 			} else if (pq.peek() == zero) {
 				return cnt + 1;
