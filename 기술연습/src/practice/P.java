@@ -1,11 +1,24 @@
 package practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class P {
 	static long[] arr = new long[81];
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(solution(7));
+		List<String> list = new ArrayList<String>();
+		list = getList();
+		System.out.println(list.get(0));
+		
+	}
+	static List<String> getList(){
+		List<String> list = new ArrayList<String>();
+		list.add("AsdasD");
+		return list;
+
 	}
 
 	static public long solution(int n) {
