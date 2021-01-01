@@ -1,20 +1,34 @@
 package practice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class P {
 	static long[] arr = new long[81];
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(solution(7));
-		List<String> list = new ArrayList<String>();
-		list = getList();
-		System.out.println(list.get(0));
-		
+		int[] temp = { 0, 5, 6, 0 };
+		int[] reslult = JSOBS(temp);
+		System.out.println(Arrays.toString(reslult));
 	}
-	static List<String> getList(){
+
+	static int[] JSOBS(int[] arr) {
+		int[] result = new int[arr.length];
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] != 0) {
+				list.add(arr[i]);
+			}
+		}
+		int start = arr.length - list.size();
+		for (int i = 0; i < list.size(); i++) {
+			result[start++] = list.get(i);
+		}
+		return result;
+	}
+
+	static List<String> getList() {
 		List<String> list = new ArrayList<String>();
 		list.add("AsdasD");
 		return list;
@@ -22,9 +36,9 @@ public class P {
 	}
 
 	static public long solution(int n) {
-		arr[0]= 0;
-		arr[1]= 1;
-		
+		arr[0] = 0;
+		arr[1] = 1;
+
 		return pibo(n);
 	}
 
