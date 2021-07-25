@@ -6,11 +6,10 @@ import java.util.List;
 
 public class P {
 	static long[] arr = new long[81];
+	static int[] target = { 1, 2, 3, 4 };
 
 	public static void main(String[] args) {
-		int[] temp = { 0, 5, 6, 0 };
-		int[] reslult = JSOBS(temp);
-		System.out.println(Arrays.toString(reslult));
+		makeCombination(3, target, 0, new int[3], 0);
 	}
 
 	static int[] JSOBS(int[] arr) {
@@ -52,5 +51,16 @@ public class P {
 			return 1;
 		}
 		return arr[n] = pibo(n - 1) + pibo(n - 2);
+	}
+
+	static void makeCombination(int r, int[] target, int current, int[] result, int start) {
+		if (r == current) {
+			System.out.println(Arrays.toString(result));
+		} else {
+			for (int i = start; i < target.length; i++) {
+				result[current] = target[i];
+				makeCombination(r, target, current + 1, result, i );
+			}
+		}
 	}
 }

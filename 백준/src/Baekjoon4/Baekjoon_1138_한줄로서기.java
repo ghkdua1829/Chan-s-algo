@@ -20,7 +20,7 @@ public class Baekjoon_1138_한줄로서기 {
 			int cnt = 0;
 			for (int i = 0; i < arr.length; i++) {
 				if (jumpCnt == cnt) {
-					for (int j = i; j < arr.length; j++) {
+					for (int j = cnt; j < arr.length; j++) {
 						if (arr[j] == 0) {
 							arr[j] = t;
 							break;
