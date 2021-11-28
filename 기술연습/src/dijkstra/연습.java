@@ -1,7 +1,10 @@
 package dijkstra;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class 연습 {
@@ -10,23 +13,24 @@ public class 연습 {
 
 	public static void main(String[] args) {
 		int num = 0;
-		east(num);
-		System.out.println(num);
-		
-		Point p1 = new Point(1,1,1);
-		ess(p1);
-		System.out.println(p1);
-		
-		
-		
-		
+
+		Point p1 = new Point(1, 1, 1);
+		List<Point> list = new ArrayList<>();
+		list.add(new Point(1, 2, 3));
+		list.add(new Point(3, 2, 3));
+		list.add(new Point(2, 2, 3));
+		Collections.sort(list);
+		for(Point p:list) {
+			System.out.println(p.toString());
+		}
 	}
-	
+
 	static void ess(Point p) {
-		p.a=2;
+		p.a = 2;
 	}
+
 	static void east(int a) {
-		a =5;
+		a = 5;
 	}
 
 	static void makePermutation(int r, int current, int[] temp, boolean[] visited) {
