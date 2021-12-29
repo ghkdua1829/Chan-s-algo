@@ -40,7 +40,7 @@ public class Baekjoon_17404_RGB거리2 {
 			}
 			result = Math.min(result, Math.min(copy[N - 1][0], Math.min(copy[N - 1][1], copy[N - 1][2])));
 		}
-		System.out.println(result);
+		System.out.println(result); 
 	}
 
 }
