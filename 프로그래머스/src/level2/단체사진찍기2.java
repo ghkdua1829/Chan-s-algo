@@ -40,6 +40,7 @@ public class 단체사진찍기2 {
 							- str.indexOf(rule.target2)) > rule.diff) {
 					} else {
 						isOk = false;
+						return;
 					}
 					break;
 				case '<':
@@ -47,6 +48,7 @@ public class 단체사진찍기2 {
 							- str.indexOf(rule.target2)) > rule.diff) {
 					} else {
 						isOk = false;
+						return;
 					}
 					break;
 				case '=':
@@ -54,6 +56,7 @@ public class 단체사진찍기2 {
 							- str.indexOf(rule.target2)) == rule.diff) {
 					} else {
 						isOk = false;
+						return;
 					}
 					break;
 				}
