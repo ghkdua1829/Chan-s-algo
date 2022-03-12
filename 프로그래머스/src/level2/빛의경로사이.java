@@ -3,7 +3,7 @@ package level2;
 import java.util.*;
 
 public class 빛의경로사이 {
-	static int[][] dirs = { { -1,0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
+	static int[][] dirs = { { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
 	static boolean[][][] visited;
 
 	public static void main(String[] args) {
@@ -23,10 +23,11 @@ public class 빛의경로사이 {
 				}
 			}
 		}
+		Collections.reverse(answer);
+		int[] s = new int[answer.size()];
 		for (int i = 0; i < answer.size(); i++) {
-			System.out.println("@@@" + answer.get(i));
+			s[i] = answer.get(i);
 		}
-		int[] s = { 1, 2 };
 		return s;
 	}
 
@@ -41,7 +42,6 @@ public class 빛의경로사이 {
 			}
 			cnt++;
 
-
 			visited[top.r][top.c][top.dir] = true;
 
 			if (grid[top.r].charAt(top.c) == 'L') {
@@ -54,9 +54,8 @@ public class 빛의경로사이 {
 			int nr = (top.r + dirs[top.dir][0] + grid.length) % grid.length;
 			int nc = (top.c + dirs[top.dir][1] + grid[0].length()) % grid[0].length();
 			int nDir = top.dir;
-			
+
 			queue.offer(new Point(nr, nc, nDir));
-			
 
 		}
 		return cnt;
