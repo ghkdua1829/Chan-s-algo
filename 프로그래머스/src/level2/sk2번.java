@@ -4,6 +4,7 @@ public class sk2번 {
 	static int[][] search = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 
 	public static void main(String[] args) {
+		int[][] arr = new int[1000000][1000000];
 		solution(5, false);
 	}
 
@@ -50,12 +51,12 @@ public class sk2번 {
 			reverse(n, board);
 		}
 
-		for (int r = 0; r < n; r++) {
-			for (int c = 0; c < n; c++) {
-				System.out.print(board[r][c]);
-			}
-			System.out.println();
-		}
+//		for (int r = 0; r < n; r++) {
+//			for (int c = 0; c < n; c++) {
+//				System.out.print(board[r][c]);
+//			}
+//			System.out.println();
+//		}
 
 		return board;
 	}
